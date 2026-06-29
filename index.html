@@ -1,31 +1,87 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phanuphong W. - DevPool 2569</title>
+    <title>CV - Phanuphong Ley Wongpunsee</title>
+    <link rel="stylesheet" href="stlye.css">
+    
 </head>
 <body>
 
     <header>
-        <h1>ภานุพงศ์ วงศ์ปันสี (เล่)</h1>
-        <p><strong>ตำแหน่ง:</strong> Purchase Engineer @ Provincial Electricity Authority (PEA)</p>
-        <p><strong>ประสบการณ์:</strong> วิศวกรไฟฟ้า (4+ ปี) เชี่ยวชาญด้านการออกแบบระบบ MV/LV และระบบป้องกัน</p>
+        <img src="profile-picture.jpg" alt="Profile Picture" class="profile-img">
+        
+        <h1>Phanuphong Ley Wongpunsee</h1>
+        <p>Phone: +669-4631-5665 | Email: peley.brazill@gmail.com</p>
+        <p>Electrical Engineer (4+ years) specializing in MV/LV system design and protection. Expert in Electrical Wiring Software and ETAP analysis (Relay Protection/System Studies). Experienced in Data Center and government procurement (TOR/Cost Estimation).</p>
     </header>
 
-    <hr> <main>
-        
-        <section>
-            <h2>ทำไมผมถึงอยากเข้าร่วม DevPool 2569?</h2>
-            <p>ในฐานะวิศวกรไฟฟ้าที่ดูแลงานจัดซื้อจัดจ้าง (Procurement) ของ กฟภ. ผมเห็นโอกาสที่จะนำเทคโนโลยีมาลดขั้นตอนการทำงานแบบ Manual ผมจึงอยากพัฒนาทักษะ Web Development เพื่อสร้างระบบ Automation และ Web Application ที่ช่วยยกระดับการจัดการข้อมูลภายในองค์กรครับ</p>
-            
-            <button id="myButton">คลิกเพื่อดูข้อมูลเพิ่มเติม</button>
-            <p id="hiddenText" hidden>เป้าหมายระยะยาว: นำความรู้ไปต่อยอดกับระบบ SAP และ Workflow ต่างๆ ใน กฟภ.</p>
-        </section>
+    <section>
+        <h2>Coding & Technical Experience</h2>
 
-        <section>
-            <h2>ประสบการณ์ทำงานที่สำคัญ</h2>
-            <ul>
-                <li><strong>Aug 2025 - ปัจจุบัน:</strong> Purchase Engineer (PEA Headquarters) - จัดทำ TOR และจัดการสัญญาจัดซื้อจัดจ้าง</li>
-                <li><strong>Feb 2025 - Jul 2025:</strong> Data Center Engineer (Gulf Development) - ดูแลระบบไฟฟ้าสำหรับ Data Center</li>
-                <li><strong>2021 - 2025:
+        <h3>Project Engineer Intern (Software & Hardware)</h3>
+        <p><strong>Infineon Technologies, Singapore</strong> | Jul 19 - Dec 19 (6 mos)</p>
+        <ul>
+            <li>Developed software (SW) and hardware (HW) for an Adaptive Light Bar (Automotive Lighting Control Unit) in the automotive industry.</li>
+            <li>Programmed basic embedded systems and performed low-level programming on ARM Cortex processors.</li>
+            <li>Applied C++ programming skills and participated in Printed Circuit Board (PCB) Design.</li>
+            <li>Involved in the complete product design cycle, from feasibility studies and engineering design to verification and evaluation.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+
+        <h3>Chiang Mai University</h3>
+        <p><strong>Bachelor of Electrical Engineering</strong> | 2016-2020</p>
+        <ul>
+            <li>Got a scholarship from excellence award throughout the academic year for 3 years in a row. (2017-2019)</li>
+            <li>Attended Winter School Program Chiang Mai - ECAM Lyon 2020.</li>
+            <li>Published a paper at The 25th Tri-University International Joint Seminar and Symposium 2018. Participated in MIE-CMU Autumn Camp in Japan 2018.</li>
+            <li>Participated in EGAT Engineer CAMP 2018.</li>
+            <li>Participated IC Design Camp 2018.</li>
+        </ul>
+
+        <h3>Yupparaj Wittayalai School</h3>
+        <p><strong>High School (Mathematics-Science Program)</strong> | 2012-2015</p>
+    </section>
+
+    <section>
+        <h2>Honors & Certificates</h2>
+        <ul>
+            <li><strong>TOEIC Listening and Reading:</strong> Total score is 850</li>
+            <li><strong>IEEE Power & Energy Society:</strong> High Voltage Substation: Connection Code, Design, Testing and Commissioning</li>
+            <li><strong>Certificate of academic excellence:</strong> 2017, 2018 and 2019 Academic years</li>
+            <li><strong>1 Publication Research:</strong> The study of human prepareness for new era technology in Chiang Mai University</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Expertise</h2>
+        <ul>
+            <li>AutoCAD 2D</li>
+            <li>E3 (Electrical Wiring Design Software)</li>
+            <li>MV&LV Power Protection</li>
+            <li>ETAP ver.21</li>
+            <li>C Programming / C++</li>
+            <li>Embedded Systems (ARM Cortex) & PCB Design</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Project Gallery</h2>
+        <div class="slider-container">
+            <img id="slider-image" src="https://via.placeholder.com/500x300?text=Image+1" alt="Project Picture">
+            <p id="slider-caption">ตรวจสอบและออกแบบระบบ MV/LV ให้กับโครงการ</p>
+            <div>
+                <button class="slider-btn" onclick="prevImage()">&#8592; ก่อนหน้า</button>
+                <button class="slider-btn" onclick="nextImage()">ถัดไป &#8594;</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>

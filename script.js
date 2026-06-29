@@ -1,37 +1,66 @@
+// ==========================================
+// 1. ส่วนของ Project Slider
+// ==========================================
 const projectData = [
-            {
-                image: "https://via.placeholder.com/500x300?text=Image+1", 
-                caption: "ตรวจสอบและออกแบบระบบ MV/LV ให้กับโครงการ"
-            },
-            {
-                image: "https://via.placeholder.com/500x300?text=Image+2", 
-                caption: "จำลองการทำงานและคำนวณ Relay Protection ด้วยโปรแกรม ETAP"
-            },
-            {
-                image: "https://via.placeholder.com/500x300?text=Image+3", 
-                caption: "ประชุมและประสานงานกับทีมผู้รับเหมาหน้างาน (Site Support)"
-            }
-        ];
 
-        let currentIndex = 0;
+    {
+        image: "cat4.jpg", 
+        caption: "หนูชื่อ เอโลอิส"
+    },
+    {
+        image: "cat1.jpg", 
+        caption: "ผมชื่อ ฟิว โฟเด้น"
+    },
+    {
+        image: "cat2.jpg", 
+        caption: "ผมชื่อ เทา เทา"
+    },
+    {
+        image: "cat3.jpg", 
+        caption: "ผมชื่อ พามเมอร์"
+    }
+];
 
-        function updateSlider() {
-            document.getElementById("slider-image").src = projectData[currentIndex].image;
-            document.getElementById("slider-caption").innerText = projectData[currentIndex].caption;
-        }
+let currentIndex = 0;
 
-        function nextImage() {
-            currentIndex = currentIndex + 1;
-            if (currentIndex >= projectData.length) {
-                currentIndex = 0; 
-            }
-            updateSlider();
-        }
+// ดึง Element มารอไว้ก่อน (Caching) เพื่อลดภาระการค้นหา DOM ทุกครั้งที่คลิกเปลี่ยนรูป
+const sliderImage = document.getElementById("slider-image");
+const sliderCaption = document.getElementById("slider-caption");
 
-        function prevImage() {
-            currentIndex = currentIndex - 1;
-            if (currentIndex < 0) {
-                currentIndex = projectData.length - 1; 
-            }
-            updateSlider();
-        }
+const updateSlider = () => {
+    sliderImage.src = projectData[currentIndex].image;
+    sliderCaption.innerText = projectData[currentIndex].caption;
+};
+
+// ใช้เครื่องหมาย Modulo (%) เพื่อจัดการการวนลูป (แทนการใช้ if หลายบรรทัด)
+function nextImage() {
+    currentIndex = (currentIndex + 1) % projectData.length;
+    updateSlider();
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + projectData.length) % projectData.length;
+    updateSlider();
+}
+
+// ==========================================
+// 2. ส่วนของ Profile Image Hover (ใส่แว่น)
+// ==========================================
+const profileImg = document.querySelector('.profile-img');
+const defaultImage = 'profile-picture.jpg'; 
+const hoverImage = 'profile-picture-dark.jpg'; 
+
+// Preload รูปภาพแว่นทึบไว้ล่วงหน้า เพื่อไม่ให้กระตุกตอนเอาเมาส์ไปชี้ครั้งแรก
+const preload = new Image();
+preload.src = hoverImage;
+
+// เช็คความปลอดภัย (Safety Check) ว่ามี element รูปโปรไฟล์อยู่จริงก่อนใส่ Event
+if (profileImg) {
+    profileImg.addEventListener('mouseenter', () => {
+        profileImg.src = hoverImage;
+    });
+
+    profileImg.addEventListener('mouseleave', () => {
+        profileImg.src = defaultImage;
+    });
+}
